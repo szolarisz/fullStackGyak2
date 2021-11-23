@@ -7,25 +7,25 @@ const server = http.createServer((req, res) => {
 
     switch (true) {
         case req.url === '/' && req.method === 'GET':
-            fs.readFile ('./view/index.html', (err, data) => {
+            fs.readFile('./view/index.html', (err, data) => {
                 res.setHeader('content-type', 'text/html');
                 res.writeHeader(200);
                 res.end(data);
-                
+
             });
             break;
-        
-            case req.url === '/fish.css' && req.method === 'GET':
-            fs.readFile ('./view/fish.css', (err, data) => {
+
+        case req.url === '/fish.css' && req.method === 'GET':
+            fs.readFile('./view/fish.css', (err, data) => {
                 res.setHeader('content-type', 'text/css');
                 res.writeHeader(200);
                 res.end(data);
-                
+
             });
             break;
 
         case req.url === "/halak" && req.method === "GET":
-            fs.readFile ('./data/halak.json', (err, data) => {
+            fs.readFile('./data/halak.json', (err, data) => {
                 res.setHeader('Content-Type', 'application/json');
                 res.writeHeader(200);
                 res.end(data);
@@ -33,12 +33,36 @@ const server = http.createServer((req, res) => {
             break;
 
         case req.url === "/halak.js" && req.method === "GET":
-            fs.readFile ('./public/halak.js', (err, data) => {
+            fs.readFile('./public/halak.js', (err, data) => {
                 res.setHeader('Content-Type', 'application/javascript');
                 res.writeHeader(200);
                 res.end(data);
             })
             break;
+
+        case req.url === "/halak" && req.method === "POST":
+            let tartalom ='';
+            req.on('data', (chunk) =>{
+                tartalom += chunk.toString();
+            });
+
+            req.on('end', () => {
+                const ujFogas = JSON.parse(tartalom);
+
+                fs.readFile("./data/halak.json", (err, data) => {
+                    let halaim = JSON.parse(data);
+                    halaim.push({
+                        fajta: sanitizeString(ujFogas.fajta),
+                        tomeg: ujFogas.tomeg,
+                        datum:sanitizeString(ujFogas.datum)
+                    });
+                    fs.writeFile('./data/halak.json',JSON.stringify(halaim), () =>{
+                        res.end(JSON.stringify(ujFogas));
+                    })
+                })
+            });
+            break;
+
 
         default:
             res.setHeader('Content-Type', 'text/html; charset=UTF8');
@@ -48,3 +72,8 @@ const server = http.createServer((req, res) => {
 });
 
 server.listen(port);
+
+function sanitizeString(str) {
+    str = str.replace(/[^a-z0-9áéíóúñü_-\s\.,]/gim, "");
+    return str.trim();
+}

@@ -1,3 +1,6 @@
+/*
+Halak listázása JSOn állomány alapján
+*/
 document.getElementById('hallista').onclick = fishList2HTML;
 
 async function fishList2HTML(){
@@ -12,3 +15,30 @@ async function fishList2HTML(){
 
     document.getElementById('fogasok').innerHTML = fishTable;
 }
+
+/*
+Új hal hozzáadása a JSOn állományhoz
+*/
+
+document.getElementById("ujHal").onsubmit = async function (event) {
+    event.preventDefault();
+    const fajta = event.target.elements.fajta.value;
+    const tomeg = event.target.elements.tomeg.value;
+    const datum = event.target.elements.datum.value;
+
+    const res = await fetch("/halak", {
+        method: 'POST',
+        headers: {
+            "content-type" : "application/json",
+        },
+        body: JSON.stringify({
+            fajta,
+            tomeg,
+            datum
+
+        }),
+    });
+
+    fishList2HTML();
+    
+};
