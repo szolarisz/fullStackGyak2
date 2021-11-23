@@ -1,0 +1,17 @@
+#myfishTable{
+    width: 700px;
+    margin: 15px auto 0 auto;
+}
+
+#myfishTable td{
+    border-bottom: solid crimson 1px;
+}
+
+#myfishTable th{
+    border-bottom: solid crimson 3px;
+}
+
+h1{
+    text-align:center;
+    color:cornflowerblue;
+}
