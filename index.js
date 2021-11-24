@@ -52,6 +52,7 @@ const server = http.createServer((req, res) => {
                 //validálás
                 if( ! validateTomeg(ujFogas.tomeg) ){
                     console.log("Nem veszem fel.");
+                    //Majd üzenni kell a felhasználónak
                     return;
                 }
 
@@ -86,4 +87,8 @@ function sanitizeString(str) {
 
 function validateTomeg(tomeg){
     return tomeg > 0;
+}
+
+function validateHalNev(nev){
+    return nev.length >= 3;
 }
