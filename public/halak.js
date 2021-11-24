@@ -1,5 +1,5 @@
 /*
-Halak listázása JSOn állomány alapján
+Halak listázása JSON állomány alapján
 */
 document.getElementById('hallista').onclick = fishList2HTML;
 
