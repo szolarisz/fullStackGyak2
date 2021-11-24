@@ -1,1 +1,67 @@
-[{"fajta":"ponty","tomeg":"3420","datum":"2021.05.12"},{"fajta":"ponty","tomeg":"3420","datum":"2021.05.12"},{"fajta":"ponty","tomeg":"3420","datum":"2021.05.12"},{"fajta":"ponty","tomeg":"3420","datum":"2021.05.12"},{"fajta":"ponty","tomeg":"3420","datum":"2021.05.12"},{"fajta":"ponty","tomeg":"3420","datum":"2021.05.12"},{"fajta":"ponty","tomeg":"3420","datum":"2021.05.12"},{"fajta":"ponty","tomeg":"3420","datum":"2021.05.12"},{"fajta":"ponty","tomeg":"3420","datum":"2021.05.12"},{"fajta":"ponty","tomeg":"3420","datum":"2021.05.12"},{"fajta":"harcsa","tomeg":"4500","datum":"2021.11.23"},{"fajta":"harcsa","tomeg":"4500","datum":"2021.11.23"},{"fajta":"csuka","tomeg":"1560","datum":"2021.12.13"}]
+[
+    {
+        "fajta": "ponty",
+        "tomeg": "3420",
+        "datum": "2021.05.12"
+    },
+    {
+        "fajta": "ponty",
+        "tomeg": "3420",
+        "datum": "2021.05.12"
+    },
+    {
+        "fajta": "ponty",
+        "tomeg": "3420",
+        "datum": "2021.05.12"
+    },
+    {
+        "fajta": "ponty",
+        "tomeg": "3420",
+        "datum": "2021.05.12"
+    },
+    {
+        "fajta": "ponty",
+        "tomeg": "3420",
+        "datum": "2021.05.12"
+    },
+    {
+        "fajta": "ponty",
+        "tomeg": "3420",
+        "datum": "2021.05.12"
+    },
+    {
+        "fajta": "ponty",
+        "tomeg": "3420",
+        "datum": "2021.05.12"
+    },
+    {
+        "fajta": "ponty",
+        "tomeg": "3420",
+        "datum": "2021.05.12"
+    },
+    {
+        "fajta": "ponty",
+        "tomeg": "3420",
+        "datum": "2021.05.12"
+    },
+    {
+        "fajta": "ponty",
+        "tomeg": "3420",
+        "datum": "2021.05.12"
+    },
+    {
+        "fajta": "harcsa",
+        "tomeg": "4500",
+        "datum": "2021.11.23"
+    },
+    {
+        "fajta": "harcsa",
+        "tomeg": "4500",
+        "datum": "2021.11.23"
+    },
+    {
+        "fajta": "csuka",
+        "tomeg": "1560",
+        "datum": "2021.12.13"
+    }
+]
