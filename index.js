@@ -49,6 +49,12 @@ const server = http.createServer((req, res) => {
             req.on('end', () => {
                 const ujFogas = JSON.parse(tartalom);
 
+                //validálás
+                if( ! validateTomeg(ujFogas.tomeg) ){
+                    console.log("Nem veszem fel.");
+                    return;
+                }
+
                 fs.readFile("./data/halak.json", (err, data) => {
                     let halaim = JSON.parse(data);
                     halaim.push({
@@ -76,4 +82,8 @@ server.listen(port);
 function sanitizeString(str) {
     str = str.replace(/[^a-z0-9áéíóúñü_-\s\.,]/gim, "");
     return str.trim();
+}
+
+function validateTomeg(tomeg){
+    return tomeg > 0;
 }
